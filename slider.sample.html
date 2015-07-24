@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>팝업존 샘플</title>
+	<style>
+
+	.popupZone{width:230px;float: left;position: relative;margin-top: 140px;}
+	.popupZone h3{color: #fff;font-weight: 600;font-size: 16px;}
+	.popupZone .ctrl{position: absolute;right: 0;top:4px;height:27px;z-index:319;text-align: right;}
+	.popupZone .ctrl button {width: 12px; height:12px; background: url(/portal/images/main/popzone_ctrl.png) no-repeat 0 0; border: none; vertical-align: middle; overflow: hidden; cursor: pointer;float:left}
+	.popupZone .ctrl button span{z-index: -1;visibility:hidden}
+	.popupZone .ctrl .popupZone_pre{ background-position: 0 0}
+	.popupZone .ctrl .popupZone_next{ background-position:-12px 0}
+	.popupZone .ctrl .popupZone_play{background-position: -16px 0;}
+	.popupZone .ctrl .popupZone_stop{background-position: 0 0;}
+
+	.popupZone .area{position: relative;}
+	.popupZone .area ul{position:absolute;right: 0;top:0;padding-right: 14px;}
+	.popupZone .area ul li{float:left}
+	.popupZone .area ul li a{position: relative;z-index: 320}
+	.popupZone .area ul li .num .r,
+	.popupZone .area ul li .num{background:url(/portal/images/main/popupListOff.png) no-repeat 0 0;font-size:0;width: 11px;}
+	.popupZone .area ul li .num{display:block;height:28px;overflow: hidden;top:-15px;right:0;margin-right:3px}
+	.popupZone .area ul li .num .r{display:block;overflow: hidden;background-position:right 0;width: 0;}
+	.popupZone .area ul li .num .t{visibility:hidden}
+
+	.popupZone .area ul li .view{position: absolute;right:0;top:5px;display:block;z-index: 322;width: 230px;height: 306px;background-color: #fff;}
+	.popupZone .area ul li .view .img{vertical-align: top;width: 230px;height: 155px;position: relative;overflow: hidden;}
+	.popupZone .area ul li .view .img img{width: 100%;}
+	.popupZone .area ul li .view span{display: block;}
+	.popupZone .area ul li .view .t{position: relative;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #df523b;height: 35px;line-height: 35px;font-size: 14px;text-align: center;}
+	.popupZone .area ul li .view .txt{font-size: 12px;line-height: 18px;color: #737373;padding: 12px 16px;height: 70px;position: relative;overflow: hidden;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+	.popupZone .area ul li .view .date{color: #939393;padding-left: 16px;padding-top: 4px;}
+	.popupZone .area ul li .view .mask{background: url(/portal/images/main/popupMask.png) 0 0 no-repeat;width: 230px;height: 306px;position: absolute;top: 0;left: 0;}
+
+	.popupZone .area ul li.on .num .r,
+	.popupZone .area ul li.on .num{background:url(/portal/images/main/popupListOn.png) no-repeat 0 0}
+	.popupZone .area ul li.on .num{padding-left: 0;width: 28px;}
+	.popupZone .area ul li.on .num .r{background-position:right 0;width:12px;width: 0;}
+	.popupZone .area ul li.on .view{display:block}
+
+	</style>
+</head>
+<body>
+<div class="popupZone">
+	
+	<h3>최근소식</h3>
+	<div class="ctrl">
+		<button type="button" class="popupZone_play"><span>최근소식 재생</span></button>
+		<button type="button" class="popupZone_stop"><span>최근소식 정지</span></button>
+		<button type="button" class="popupZone_pre"><span>최근소식 이전보기</span></button>
+		<button type="button" class="popupZone_next"><span>최근소식 다음보기</span></button> 
+	</div>
+	<div class="area">
+		<ul>
+			<li class='on'>
+				<a href="#news-list_1" class="num"><span class="r"><span class="t">1번 최근소식 보기</span></span></a>
+				<a href="" class="view" id="news-list_1">
+				1번 최근소식 내용
+				</a>
+			</li>
+			<li>
+				<a href="#news-list_1" class="num"><span class="r"><span class="t">2번 최근소식 보기</span></span></a>
+				<a href="" class="view" id="news-list_1">
+				2번 최근소식 내용
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	//<![CDATA[
+		jQuery(".news").slideCtrl({
+			photo_list		: jQuery('.news>.area li'),
+			photo_list_left	: jQuery('.news_pre'),
+			photo_list_right: jQuery('.news_next'),
+			photo_list_play	: jQuery(".news_play"),
+			photo_list_stop	: jQuery(".news_stop"),
+			FXconfig		: true,
+			d_time			: 6000
+		});
+	//]]>
+	</script> 
+
+</div>
+</div>
+</body>
+</html>
