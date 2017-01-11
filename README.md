@@ -1,6 +1,10 @@
 # slider
 팝업존 슬라이드 접근성 보장
-<code>
+
+# code
+## Install
+
+```html
 <div class="area">
 		<ul>
 			<li class='on'>
@@ -17,7 +21,10 @@
 			</li>
 		</ul>
 	</div>
-</code>
+'''
+## script
+
+```script
 	<script type="text/javascript">
 	//<![CDATA[
 		jQuery(".news").slideCtrl({
@@ -31,3 +38,4 @@
 		});
 	//]]>
 	</script> 
+...
